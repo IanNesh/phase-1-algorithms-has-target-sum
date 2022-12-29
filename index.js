@@ -1,9 +1,19 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  for (let i = 0; i < array.length; i++){
+    for(let j = i + 1; j < array.length; j++){
+      if(array[i] + array[j] === target){
+        return true;
+      }
+    }
+  }
+  return false;
 }
 
 /* 
   Write the Big O time complexity of your function here
+  O(N^2)
+  Finding a pair for every element in the array of size N
 */
 
 /* 
@@ -12,6 +22,10 @@ function hasTargetSum(array, target) {
 
 /*
   Add written explanation of your solution here
+  We need to iterate through the array and check each element in the array ,apart from the ones previously checked
+  ,two of the values in the array should add up to the target
+  if thats the case, return true
+      else return false
 */
 
 // You can run `node index.js` to view these console logs
